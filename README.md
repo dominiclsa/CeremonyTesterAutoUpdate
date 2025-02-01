@@ -19,11 +19,10 @@ git clone https://github.com/dominiclsa/CeremonyTesterAutoUpdate.git
 cd CeremonyTesterAutoUpdate
 2️⃣ Install Dependencies
 Make sure you have Node.js installed, then install the required packages:
-
 npm install
+
 3️⃣ Retrieve Your Silent JWT Token
 You need your Silent Protocol JWT Token to authenticate.
-
 📍 Steps to Get the Token:
 
 1️⃣ Go to the Ceremony Page:
