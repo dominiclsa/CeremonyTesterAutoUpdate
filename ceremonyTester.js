@@ -5,11 +5,33 @@ dotenv.config(); // Load environment variables from .env file
 
 const TOKEN = process.env.TOKEN;
 const BASE_URL = process.env.BASE_URL;
+const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL; // Discord Webhook
 
 if (!TOKEN) {
   console.error("Error: TOKEN is not set in .env file");
   process.exit(1);
 }
+
+if (!DISCORD_WEBHOOK_URL) {
+  console.error("Error: DISCORD_WEBHOOK_URL is not set in .env file");
+  process.exit(1);
+}
+
+// Function to send a webhook notification to Discord
+const sendDiscordNotification = async (message) => {
+  try {
+    await axios.post(DISCORD_WEBHOOK_URL, {
+      content: message, // Message content
+    });
+
+    console.log("✅ Notification sent to Discord!");
+  } catch (error) {
+    console.error(
+      "❌ Error sending Discord notification:",
+      error.response?.data || error.message
+    );
+  }
+};
 
 // Function to decode the token and check expiry
 const timeUntilExpiry = (token) => {
@@ -67,27 +89,6 @@ const checkQueuePosition = async () => {
   }
 };
 
-// Attempt contribution with a hardcoded ceremony ID
-const contribute = async () => {
-  const hardcodedCeremonyId = "fAbNNP"; // Replace with your desired ceremony ID
-  try {
-    const response = await axios.post(
-      `${BASE_URL}/ceremony/contribute`,
-      { ceremonyId: hardcodedCeremonyId, tweet: false },
-      {
-        headers: {
-          Authorization: `Bearer ${TOKEN}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    console.log("Contribution Response:", response.data);
-  } catch (error) {
-    console.error("Error contributing:", error.response?.data || error.message);
-  }
-};
-
 // Main function to monitor, ping, and contribute
 const main = async () => {
   const timeLeft = timeUntilExpiry(TOKEN);
@@ -113,12 +114,10 @@ const main = async () => {
     const behind = await checkQueuePosition();
 
     if (behind !== null && behind <= 10) {
-      console.log(
-        "🚀 You are within the top 10! Visit https://ceremony.silentprotocol.org/ceremonies to contribute."
-      );
-      console.log(
-        "🔔 Please go to the website and complete your contribution as soon as possible."
-      );
+      const message = `🚀 You are within the top 10! Visit [Ceremony Page](https://ceremony.silentprotocol.org/ceremonies) to contribute now!`;
+      console.log(message);
+      sendDiscordNotification(message);
+
       clearInterval(monitorTimer); // Stop monitoring
       clearInterval(pingTimer); // Stop pinging
     }
