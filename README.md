@@ -5,8 +5,11 @@ A simple script that monitors your queue position for the Silent Protocol Ceremo
 📌 Features
 
 ✅ Automatically checks your queue position every minute.
+
 ✅ Sends a Discord webhook notification when you're in the top 10.
+
 ✅ Keeps the session alive with periodic pings.
+
 ✅ Helps you contribute at the right time without constantly checking the website.
 
 🔧 Setup Instructions
@@ -53,7 +56,6 @@ Then, edit the .env file and fill in your token and Discord webhook URL:
 TOKEN=your_silent_jwt_token_here
 BASE_URL=https://ceremony-backend.silentprotocol.org
 DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/your-webhook-id/your-webhook-token
-📌 Example .env setup:
 
 5️⃣ Run the Script
 Start monitoring your queue position:
