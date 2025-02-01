@@ -29,6 +29,8 @@ You need your Silent Protocol JWT Token to authenticate.
 1️⃣ Go to the Ceremony Page:
 👉 https://ceremony.silentprotocol.org/ceremonies
 
+if you wanna help me 😃 https://ceremony.silentprotocol.org?ref=1448303158757834753
+
 2️⃣ Open Developer Tools:
 
 Chrome/Edge: Press F12 or Ctrl + Shift + I (Windows/Linux) or Cmd + Opt + I (Mac).
