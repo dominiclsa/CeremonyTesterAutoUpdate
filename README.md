@@ -33,7 +33,7 @@ Click on https://ceremony.silentprotocol.org.
 Locate the Token:
 Find the key silent_jwt.
 Copy the value (this is your token).
-![Image Description](https://ibb.co/xSSjsFGg)
+![Image Description](https://postimg.cc/k2yLmdtz)
 
 4️⃣ Set Up Environment Variables
 Create a .env file and add your token:
@@ -55,7 +55,7 @@ node ceremonyTester.js
 The script checks your queue position every minute.
 If you are within the top 10, you will get a Discord notification.
 Once notified, go to 👉 https://ceremony.silentprotocol.org/ceremonies and complete your contribution.
-![Image Description](https://ibb.co/tT5Ng2MY)
+![Image Description](https://i.postimg.cc/kGMqDTJW/image.png)
 
 🛠️ Troubleshooting
 
