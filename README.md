@@ -15,7 +15,7 @@ A simple script that monitors your queue position for the Silent Protocol Ceremo
 🔧 Setup Instructions
 
 1️⃣ Clone the Repository
-git clone https://github.com/your-repo/CeremonyTesterAutoUpdate.git
+git clone https://github.com/dominiclsa/CeremonyTesterAutoUpdate.git
 cd CeremonyTesterAutoUpdate
 2️⃣ Install Dependencies
 Make sure you have Node.js installed, then install the required packages:
