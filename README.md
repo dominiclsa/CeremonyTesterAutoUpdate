@@ -33,7 +33,7 @@ Click on https://ceremony.silentprotocol.org.
 Locate the Token:
 Find the key silent_jwt.
 Copy the value (this is your token).
-![Image Description](https://postimg.cc/k2yLmdtz)
+![Image Description](https://i.postimg.cc/9f32ymXm/image.png)
 
 4️⃣ Set Up Environment Variables
 Create a .env file and add your token:
